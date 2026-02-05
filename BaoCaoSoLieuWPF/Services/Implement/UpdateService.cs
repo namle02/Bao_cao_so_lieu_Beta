@@ -13,10 +13,9 @@ namespace BaoCaoSoLieu.Services.Implement
         private readonly HttpClient _httpClient;
 
         /// <summary>
-        /// Repo GitHub: thay YOUR_USER/YOUR_REPO nếu khác (vd: namle02/Bao_cao_so_lieu).
-        /// Release cần có ít nhất một file .zip (nội dung bản cài) để nút Cập nhật hoạt động.
+        /// Repo GitHub: Release cần có ít nhất một file .zip (nội dung bản cài) để nút Cập nhật hoạt động.
         /// </summary>
-        private const string GITHUB_REPO = "namle02/Bao_cao_so_lieu";
+        private const string GITHUB_REPO = "namle02/Bao_cao_so_lieu_Beta";
         private static string GITHUB_API_URL => $"https://api.github.com/repos/{GITHUB_REPO}/releases/latest";
 
         private const string EXE_NAME = "BaoCaoSoLieu.exe";
