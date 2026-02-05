@@ -1,0 +1,1407 @@
+<UserControl
+    x:Class="BaoCaoSoLieu.View.PageView.Bang4"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:BaoCaoSoLieu.View.PageView"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <UserControl.Resources>
+        <Style x:Key="EditableCellStyle" TargetType="Border">
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="BorderThickness" Value="0.5" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F0F0F0" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="EditableTextBoxStyle" TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Padding" Value="8,4" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer
+                                x:Name="PART_ContentHost"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="Background" Value="White" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style x:Key="DataTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style x:Key="TitleStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,10" />
+        </Style>
+    </UserControl.Resources>
+    <Grid HorizontalAlignment="Stretch" Background="White">
+        <ScrollViewer>
+            <Grid>
+                <!--  Khai báo bảng các 4 bảng con  -->
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <!--  Bảng Phòng khám thường  -->
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Tiêu đề bảng  -->
+                    <Label
+                        Grid.Row="0"
+                        Content="Phòng khám thường"
+                        Style="{StaticResource TitleStyle}" />
+
+                    <!--  Header bảng  -->
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45" />
+                            <RowDefinition Height="45" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!--  Header bảng  -->
+                        <Border
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="0"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="STT" />
+                        </Border>
+                        <Border
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="1"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="Phòng Khám" />
+                        </Border>
+                        <Border
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="2"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Margin="5,0"
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Số ngày hoạt động"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            Grid.ColumnSpan="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Margin="5,0"
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Chỉ tiêu luật khám" />
+                        </Border>
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="2"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Margin="5,0"
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Nhập viên" />
+                        </Border>
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="8"
+                            Grid.ColumnSpan="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Margin="5,0"
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Chỉ tiêu tài chính đối tượng" />
+                        </Border>
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="11"
+                            Grid.ColumnSpan="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Margin="5,0"
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Chỉ tiêu tài chính đối tượng vp" />
+                        </Border>
+
+                        <!--  Header con  -->
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Chỉ tiêu ngày"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="4"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Tháng"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="5"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="So với kế hoạch"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="6"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Số lượng"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="7"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Tỷ lệ nhập viên"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="8"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="KH TB/HS"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="9"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="TB/HS BHYT"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="10"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="So Sánh với chỉ tiêu"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="11"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="KH TB/HS"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="12"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="TB/HS VP"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="13"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="So sánh với chỉ tiêu"
+                                TextWrapping="Wrap" />
+                        </Border>
+                    </Grid>
+
+                    <!--  Bảng dữ liệu  -->
+                    <Grid Grid.Row="2">
+                        <ItemsControl ItemsSource="{Binding Bang4List}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50" />
+                                            <ColumnDefinition Width="200" />
+                                            <ColumnDefinition Width="150" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <!--  STT  -->
+                                        <Border
+                                            Grid.Column="0"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5">
+                                            <TextBlock
+                                                Style="{StaticResource DataTextStyle}"
+                                                Text="{Binding Stt}"
+                                                ToolTip="STT" />
+                                        </Border>
+                                        <!--  Phòng khám  -->
+                                        <Border
+                                            Grid.Column="1"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5">
+                                            <TextBlock
+                                                Style="{StaticResource DataTextStyle}"
+                                                Text="{Binding PhongKham}"
+                                                TextWrapping="Wrap"
+                                                ToolTip="Phòng khám" />
+                                        </Border>
+                                        <!--  Số ngày hoạt động  -->
+                                        <Border
+                                            Grid.Column="2"
+                                            Height="45"
+                                            Style="{StaticResource EditableCellStyle}">
+                                            <TextBox
+                                                Style="{StaticResource EditableTextBoxStyle}"
+                                                Text="{Binding SoNgayHoatDong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                ToolTip="Số ngày hoạt động" />
+                                        </Border>
+                                        <!--  Chỉ tiêu ngày  -->
+                                        <Border
+                                            Grid.Column="3"
+                                            Height="45"
+                                            Style="{StaticResource EditableCellStyle}">
+                                            <TextBox
+                                                Style="{StaticResource EditableTextBoxStyle}"
+                                                Text="{Binding ChiTieuNgay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                ToolTip="Chỉ tiêu ngày" />
+                                        </Border>
+                                        <!--  Tổng luật khám tháng  -->
+                                        <Border
+                                            Grid.Column="4"
+                                            Height="45"
+                                            Style="{StaticResource EditableCellStyle}">
+                                            <TextBox
+                                                Style="{StaticResource EditableTextBoxStyle}"
+                                                Text="{Binding Thang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                ToolTip="Tổng luật khám tháng" />
+                                        </Border>
+                                        <!--  Tỷ lệ hoàn thành tháng  -->
+                                        <Border
+                                            Grid.Column="5"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5">
+                                            <TextBlock
+                                                Style="{StaticResource DataTextStyle}"
+                                                Text="{Binding SoVoiKeHoach}"
+                                                ToolTip="Tỷ lệ hoàn thành" />
+                                        </Border>
+                                        <!--  Số lượng nhập viện  -->
+                                        <Border
+                                            Grid.Column="6"
+                                            Height="45"
+                                            Style="{StaticResource EditableCellStyle}">
+                                            <TextBox
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Style="{StaticResource EditableTextBoxStyle}"
+                                                Text="{Binding SoLuong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                ToolTip="Số lượng nhập viện" />
+                                        </Border>
+                                        <!--  Tỷ lệ nhập viện  -->
+                                        <Border
+                                            Grid.Column="7"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5">
+                                            <TextBlock
+                                                Style="{StaticResource DataTextStyle}"
+                                                Text="{Binding TyLeNhapVien}"
+                                                ToolTip="Tỷ lệ nhập viện" />
+                                        </Border>
+                                        <!--  Chỉ tiêu tài chính BHYT  -->
+                                        <Border
+                                            Grid.Column="8"
+                                            Height="45"
+                                            Style="{StaticResource EditableCellStyle}">
+                                            <TextBox
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Style="{StaticResource EditableTextBoxStyle}"
+                                                Text="{Binding Kh_BHYT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                ToolTip="Chỉ tiêu tài chính BHYT" />
+                                        </Border>
+                                        <!--  Thực hiện tài chính BHYT  -->
+                                        <Border
+                                            Grid.Column="9"
+                                            Height="45"
+                                            Style="{StaticResource EditableCellStyle}">
+                                            <TextBox
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Style="{StaticResource EditableTextBoxStyle}"
+                                                Text="{Binding Th_BHYT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                ToolTip="Thực hiện tài chính BHYT" />
+                                        </Border>
+                                        <!--  So sánh với chỉ tiêu BHYT  -->
+                                        <Border
+                                            Grid.Column="10"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5">
+                                            <TextBlock
+                                                Style="{StaticResource DataTextStyle}"
+                                                Text="{Binding TyLeBHYT}"
+                                                ToolTip="So sánh với chỉ tiêu BHYT" />
+                                        </Border>
+                                        <!--  Chỉ tiêu tài chính viện phí  -->
+                                        <Border
+                                            Grid.Column="11"
+                                            Height="45"
+                                            Style="{StaticResource EditableCellStyle}">
+                                            <TextBox
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Style="{StaticResource EditableTextBoxStyle}"
+                                                Text="{Binding Kh_VP, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                ToolTip="Chỉ tiêu tài chính viện phí" />
+                                        </Border>
+                                        <!--  Thực hiện tài chính viện phí  -->
+                                        <Border
+                                            Grid.Column="12"
+                                            Height="45"
+                                            Style="{StaticResource EditableCellStyle}">
+                                            <TextBox
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Style="{StaticResource EditableTextBoxStyle}"
+                                                Text="{Binding Th_VP, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                ToolTip="Thực hiện tài chính viện phí" />
+                                        </Border>
+                                        <!--  So sánh với chỉ tiêu viện phí  -->
+                                        <Border
+                                            Grid.Column="13"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5">
+                                            <TextBlock
+                                                Style="{StaticResource DataTextStyle}"
+                                                Text="{Binding TyLeVP}"
+                                                ToolTip="So sánh với chỉ tiêu viện phí" />
+                                        </Border>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+
+                    <!--  Dòng tổng cộng  -->
+                    <Grid Grid.Row="3" Height="45">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border
+                            Grid.Column="0"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="1"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                FontWeight="Bold"
+                                Style="{StaticResource DataTextStyle}"
+                                Text="Tổng"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="2"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4Total.ChiTieuNgay}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="4"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4Total.Thang}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="5"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4Total.SoVoiKeHoach}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="6"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4Total.SoLuong}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="7"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4Total.TyLeNhapVien}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="8"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="9"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="10"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="11"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="12"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="13"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                    </Grid>
+                </Grid>
+
+                <!--  Bảng các khoa ngoại trú  -->
+                <Grid Grid.Row="1" Margin="0,20,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Tiêu đề bảng  -->
+                    <Label
+                        Grid.Row="0"
+                        Content="Các khoa ngoại trú"
+                        Style="{StaticResource TitleStyle}" />
+
+                    <!--  Header bảng  -->
+                    <Grid Grid.Row="1" Height="45">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Border
+                            Grid.Column="0"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="Khoa Phòng" />
+                        </Border>
+                        <Border
+                            Grid.Column="1"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="KH TB/HS" />
+                        </Border>
+                        <Border
+                            Grid.Column="2"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="TB/HS BHYT" />
+                        </Border>
+                        <Border
+                            Grid.Column="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="So sánh với chỉ tiêu" />
+                        </Border>
+                    </Grid>
+
+                    <!--  Bảng dữ liệu  -->
+                    <Grid Grid.Row="2">
+                        <ItemsControl ItemsSource="{Binding Bang4KhoaNgoaiTruList}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="300" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Border
+                                            Grid.Column="0"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5">
+                                            <TextBlock
+                                                Style="{StaticResource DataTextStyle}"
+                                                Text="{Binding TenKhoa}"
+                                                ToolTip="Khoa Phòng" />
+                                        </Border>
+                                        <Border
+                                            Grid.Column="1"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5"
+                                            Style="{StaticResource EditableCellStyle}">
+                                            <TextBox
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Style="{StaticResource EditableTextBoxStyle}"
+                                                Text="{Binding KeHoach_TBHS}"
+                                                ToolTip="Kế hoạch TB/HS" />
+                                        </Border>
+                                        <Border
+                                            Grid.Column="2"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5"
+                                            Style="{StaticResource EditableCellStyle}">
+                                            <TextBox
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Style="{StaticResource EditableTextBoxStyle}"
+                                                Text="{Binding TBHS_BHYT}"
+                                                ToolTip="TB/HS BHYT" />
+                                        </Border>
+                                        <Border
+                                            Grid.Column="3"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5">
+                                            <TextBlock
+                                                Style="{StaticResource DataTextStyle}"
+                                                Text="{Binding SoSanhVoiChiTieu}"
+                                                ToolTip="So sánh với chỉ tiêu" />
+                                        </Border>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+
+                </Grid>
+
+                <!--  Bảng các khoa phòng có nhiều cổng vào  -->
+                <Grid Grid.Row="2" Margin="0,20,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Tiêu đề bảng  -->
+                    <Label
+                        Grid.Row="0"
+                        Content="Các phòng có nhiều cổng vào"
+                        Style="{StaticResource TitleStyle}" />
+
+                    <!--  Header bảng  -->
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45" />
+                            <RowDefinition Height="45" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Border
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="0"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="Khoa Phòng" />
+                        </Border>
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="Nhập viện" />
+                        </Border>
+
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="Tổng số" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="Tháng" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="Tỷ lệ nhập viện" />
+                        </Border>
+                    </Grid>
+
+                    <!--  Bảng dữ liệu  -->
+                    <Grid Grid.Row="2">
+                        <ItemsControl ItemsSource="{Binding Bang4CacPhongCoNhieuCongVaoList}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="300" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Border
+                                            Grid.Column="0"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5">
+                                            <TextBlock
+                                                Style="{StaticResource DataTextStyle}"
+                                                Text="{Binding KhoaPhong}"
+                                                ToolTip="Khoa Phòng" />
+                                        </Border>
+                                        <Border
+                                            Grid.Column="1"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5"
+                                            Style="{StaticResource EditableCellStyle}">
+                                            <TextBox
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Style="{StaticResource EditableTextBoxStyle}"
+                                                Text="{Binding TongSo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                ToolTip="Tổng số" />
+                                        </Border>
+                                        <Border
+                                            Grid.Column="2"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5"
+                                            Style="{StaticResource EditableCellStyle}">
+                                            <TextBox
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Style="{StaticResource EditableTextBoxStyle}"
+                                                Text="{Binding Thang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                ToolTip="Tháng" />
+                                        </Border>
+                                        <Border
+                                            Grid.Column="3"
+                                            Height="45"
+                                            BorderBrush="Black"
+                                            BorderThickness="0.5">
+                                            <TextBlock
+                                                Style="{StaticResource DataTextStyle}"
+                                                Text="{Binding TyLeNhapVien}"
+                                                ToolTip="Tỷ lệ nhập viện" />
+                                        </Border>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+
+                    <!--  Dòng tổng cộng  -->
+                    <Grid Grid.Row="3" Height="45">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border
+                            Grid.Column="0"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                FontWeight="Bold"
+                                Style="{StaticResource DataTextStyle}"
+                                Text="Tổng cộng"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="1"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4CacPhongCoNhieuCongVaoTotal.TongSo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="2"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4CacPhongCoNhieuCongVaoTotal.Thang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4CacPhongCoNhieuCongVaoTotal.TyLeNhapVien}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                    </Grid>
+                </Grid>
+
+                <!--  Bảng phòng khám yêu cầu  -->
+                <Grid Grid.Row="3" Margin="0,20,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Tiêu đề bảng  -->
+                    <Label
+                        Grid.Row="0"
+                        Content="Phòng khám yêu cầu"
+                        Style="{StaticResource TitleStyle}" />
+
+                    <!--  Header bảng  -->
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45" />
+                            <RowDefinition Height="45" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="300" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <!--  Header bảng  -->
+                        <Border
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="0"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="STT" />
+                        </Border>
+                        <Border
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="1"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="Phòng Khám yêu cầu" />
+                        </Border>
+                        <Border
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="2"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Margin="5,0"
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Số ngày hoạt động"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            Grid.ColumnSpan="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Margin="5,0"
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Chỉ tiêu luật khám" />
+                        </Border>
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="2"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Margin="5,0"
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Nhập viên" />
+                        </Border>
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="8"
+                            Grid.ColumnSpan="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Margin="5,0"
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Chỉ tiêu tài chính đối tượng yêu cầu" />
+                        </Border>
+
+
+                        <!--  Header con  -->
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Chỉ tiêu ngày"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="4"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Tháng"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="5"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="So với kế hoạch"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="6"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Số lượng"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="7"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="Tỷ lệ nhập viên"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="8"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="KH TB/HS"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="9"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="TB/HS"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="10"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource HeaderTextStyle}"
+                                Text="So Sánh với kế hoạch"
+                                TextWrapping="Wrap" />
+                        </Border>
+
+                    </Grid>
+
+                    <!--  Bảng dữ liệu  -->
+                    <ItemsControl Grid.Row="2" ItemsSource="{Binding Bang4PhongKhamYeuCauList}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="300" />
+                                        <ColumnDefinition Width="150" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <!--  STT  -->
+                                    <Border
+                                        Grid.Column="0"
+                                        Height="45"
+                                        BorderBrush="Black"
+                                        BorderThickness="0.5">
+                                        <TextBlock
+                                            Style="{StaticResource DataTextStyle}"
+                                            Text="{Binding Stt}"
+                                            ToolTip="STT" />
+                                    </Border>
+                                    <!--  Phòng khám  -->
+                                    <Border
+                                        Grid.Column="1"
+                                        Height="45"
+                                        BorderBrush="Black"
+                                        BorderThickness="0.5">
+                                        <TextBlock
+                                            Style="{StaticResource DataTextStyle}"
+                                            Text="{Binding PhongKham}"
+                                            TextWrapping="Wrap"
+                                            ToolTip="Phòng khám" />
+                                    </Border>
+                                    <!--  Số ngày hoạt động  -->
+                                    <Border
+                                        Grid.Column="2"
+                                        Height="45"
+                                        Style="{StaticResource EditableCellStyle}">
+                                        <TextBox
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Style="{StaticResource EditableTextBoxStyle}"
+                                            Text="{Binding SoNgayHoatDong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                            ToolTip="Số ngày hoạt động" />
+                                    </Border>
+                                    <!--  Chỉ tiêu ngày  -->
+                                    <Border
+                                        Grid.Column="3"
+                                        Height="45"
+                                        Style="{StaticResource EditableCellStyle}">
+                                        <TextBox
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Style="{StaticResource EditableTextBoxStyle}"
+                                            Text="{Binding ChiTieuNgay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                            ToolTip="Chỉ tiêu ngày" />
+                                    </Border>
+                                    <!--  Tổng luật khám tháng  -->
+                                    <Border
+                                        Grid.Column="4"
+                                        Height="45"
+                                        Style="{StaticResource EditableCellStyle}">
+                                        <TextBox
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Style="{StaticResource EditableTextBoxStyle}"
+                                            Text="{Binding Thang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                            ToolTip="Tổng luật khám tháng" />
+                                    </Border>
+                                    <!--  Tỷ lệ hoàn thành tháng  -->
+                                    <Border
+                                        Grid.Column="5"
+                                        Height="45"
+                                        BorderBrush="Black"
+                                        BorderThickness="0.5">
+                                        <TextBlock
+                                            Style="{StaticResource DataTextStyle}"
+                                            Text="{Binding SoVoiKeHoach}"
+                                            ToolTip="Tỷ lệ hoàn thành" />
+                                    </Border>
+                                    <!--  Số lượng nhập viện  -->
+                                    <Border
+                                        Grid.Column="6"
+                                        Height="45"
+                                        Style="{StaticResource EditableCellStyle}">
+                                        <TextBox
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Style="{StaticResource EditableTextBoxStyle}"
+                                            Text="{Binding SoLuong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                            ToolTip="Số lượng nhập viện" />
+                                    </Border>
+                                    <!--  Tỷ lệ nhập viện  -->
+                                    <Border
+                                        Grid.Column="7"
+                                        Height="45"
+                                        BorderBrush="Black"
+                                        BorderThickness="0.5">
+                                        <TextBlock
+                                            Style="{StaticResource DataTextStyle}"
+                                            Text="{Binding TyLeNhapVien}"
+                                            ToolTip="Tỷ lệ nhập viện" />
+                                    </Border>
+                                    <!--  Chỉ tiêu tài chính BHYT  -->
+                                    <Border
+                                        Grid.Column="8"
+                                        Height="45"
+                                        Style="{StaticResource EditableCellStyle}">
+                                        <TextBox
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Style="{StaticResource EditableTextBoxStyle}"
+                                            Text="{Binding Kh_TbHs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                            ToolTip="Chỉ tiêu tài chính BHYT" />
+                                    </Border>
+                                    <!--  Thực hiện tài chính BHYT  -->
+                                    <Border
+                                        Grid.Column="9"
+                                        Height="45"
+                                        Style="{StaticResource EditableCellStyle}">
+                                        <TextBox
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            Style="{StaticResource EditableTextBoxStyle}"
+                                            Text="{Binding Th_TbHs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                            ToolTip="Thực hiện tài chính BHYT" />
+                                    </Border>
+                                    <!--  So sánh với chỉ tiêu BHYT  -->
+                                    <Border
+                                        Grid.Column="10"
+                                        Height="45"
+                                        BorderBrush="Black"
+                                        BorderThickness="0.5">
+                                        <TextBlock
+                                            Style="{StaticResource DataTextStyle}"
+                                            Text="{Binding TyLeTC}"
+                                            ToolTip="So sánh với chỉ tiêu" />
+                                    </Border>
+                                </Grid>
+
+
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <!--  Dòng tổng cộng  -->
+                    <Grid Grid.Row="3" Height="45">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="300" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border
+                            Grid.Column="0"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="1"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                FontWeight="Bold"
+                                Style="{StaticResource DataTextStyle}"
+                                Text="Tổng"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="2"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="3"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4PhongKhamYeuCauTotal.ChiTieuNgay}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="4"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4PhongKhamYeuCauTotal.Thang}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="5"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4PhongKhamYeuCauTotal.SoVoiKeHoach}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="6"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4PhongKhamYeuCauTotal.SoLuong}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="7"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text="{Binding Bang4PhongKhamYeuCauTotal.TyLeNhapVien}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="8"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="9"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                        <Border
+                            Grid.Column="10"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <TextBlock
+                                Style="{StaticResource DataTextStyle}"
+                                Text=""
+                                TextWrapping="Wrap" />
+                        </Border>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

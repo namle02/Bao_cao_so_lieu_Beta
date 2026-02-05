@@ -1,0 +1,39 @@
+# Build
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# User-specific
+*.rsuser
+*.userprefs
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# Publish
+[Dd]ebug/
+[Rr]elease/
+publish/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# JetBrains
+.idea/
+*.sln.iml
+
+# Keep App Installer output if you want; uncomment to ignore:
+# App Installer/Release/*.msi
+# App Installer/Release/*.exe
