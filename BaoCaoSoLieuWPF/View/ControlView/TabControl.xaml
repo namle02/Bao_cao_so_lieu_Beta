@@ -1,4 +1,4 @@
-﻿<UserControl
+<UserControl
     x:Class="BaoCaoSoLieu.View.ControlView.TabControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -15,6 +15,7 @@
         <converter:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <converter:LoadingTextConverter x:Key="LoadingTextConverter" />
         <converter:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+        <converter:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -42,9 +43,10 @@
                 SelectedItem="{Binding SelectedTable, Mode=TwoWay}"
                 Style="{StaticResource MaterialDesignOutlinedComboBox}" />
 
-            <!--  Thanh chọn ngày tháng  -->
+            <!--  Thanh chọn ngày tháng (ẩn khi chọn Cập nhật)  -->
             <Border
                 Grid.Column="1"
+                Visibility="{Binding IsUpdatePageSelected, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
                 Margin="25,20"
                 Padding="20"
                 VerticalAlignment="Top"
@@ -159,10 +161,14 @@
                 <DataTemplate DataType="{x:Type vm:Bang4VM}">
                     <view:Bang4 />
                 </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:CapNhatVM}">
+                    <view:CapNhatPage />
+                </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>
 
-        <DockPanel Grid.Row="2" LastChildFill="False">
+        <DockPanel Grid.Row="2" LastChildFill="False"
+                   Visibility="{Binding IsUpdatePageSelected, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
             <Button
                 Width="250"
                 Height="50"

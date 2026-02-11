@@ -1,4 +1,4 @@
-﻿using BaoCaoSoLieu.Repos.Mappers.Implement;
+using BaoCaoSoLieu.Repos.Mappers.Implement;
 using BaoCaoSoLieu.Repos.Mappers.Interface;
 using BaoCaoSoLieu.Services.Implement;
 using BaoCaoSoLieu.Services.Interface;
@@ -22,6 +22,8 @@ namespace BaoCaoSoLieu.DI_Register
             // đăng kí service thông báo
             services.AddSingleton<INotificationService, NotificationService>();
 
+            // service cập nhật phần mềm
+            services.AddSingleton<IUpdateService, UpdateService>();
         }
     }
 }

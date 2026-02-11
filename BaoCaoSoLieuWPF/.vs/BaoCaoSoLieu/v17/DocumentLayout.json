@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\",
+  "WorkspaceRootPath": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|c:\\users\\lehoa\\documents\\github\\bao_cao_so_lieu\\baocaosolieuwpf\\sqlscripts\\bang1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
-      "RelativeMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|solutionrelative:sqlscripts\\bang1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+      "AbsoluteMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|c:\\users\\lehoa\\documents\\github\\bao_cao_so_lieu_beta_1\\baocaosolieuwpf\\view\\controlview\\header.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|solutionrelative:view\\controlview\\header.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|c:\\users\\lehoa\\documents\\github\\bao_cao_so_lieu\\baocaosolieuwpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|c:\\users\\lehoa\\documents\\github\\bao_cao_so_lieu_beta_1\\baocaosolieuwpf\\services\\implement\\updateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|solutionrelative:services\\implement\\updateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|c:\\users\\lehoa\\documents\\github\\bao_cao_so_lieu_beta_1\\baocaosolieuwpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|c:\\users\\lehoa\\documents\\github\\bao_cao_so_lieu\\baocaosolieuwpf\\repos\\mappers\\implement\\reportmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|c:\\users\\lehoa\\documents\\github\\bao_cao_so_lieu_beta_1\\baocaosolieuwpf\\repos\\mappers\\implement\\reportmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|solutionrelative:repos\\mappers\\implement\\reportmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|c:\\users\\lehoa\\documents\\github\\bao_cao_so_lieu\\baocaosolieuwpf\\sqlscripts\\bang1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{D3CA18E1-95D2-4083-8E9A-E2EB49FB19C7}|BaoCaoSoLieu.csproj|solutionrelative:sqlscripts\\bang1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 211,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,36 +42,49 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Bang1.sql ",
-              "DocumentMoniker": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\SqlScripts\\Bang1.sql",
-              "RelativeDocumentMoniker": "SqlScripts\\Bang1.sql",
-              "ToolTip": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\SqlScripts\\Bang1.sql",
-              "RelativeToolTip": "SqlScripts\\Bang1.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-02-04T06:44:36.114Z",
+              "DocumentIndex": 1,
+              "Title": "UpdateService.cs",
+              "DocumentMoniker": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\Services\\Implement\\UpdateService.cs",
+              "RelativeDocumentMoniker": "Services\\Implement\\UpdateService.cs",
+              "ToolTip": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\Services\\Implement\\UpdateService.cs",
+              "RelativeToolTip": "Services\\Implement\\UpdateService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T07:27:10.875Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Header.xaml",
+              "DocumentMoniker": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\View\\ControlView\\Header.xaml",
+              "RelativeDocumentMoniker": "View\\ControlView\\Header.xaml",
+              "ToolTip": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\View\\ControlView\\Header.xaml",
+              "RelativeToolTip": "View\\ControlView\\Header.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-11T07:19:52.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\App.xaml.cs",
               "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T08:01:56.356Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ReportMapper.cs",
-              "DocumentMoniker": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\Repos\\Mappers\\Implement\\ReportMapper.cs",
+              "DocumentMoniker": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\Repos\\Mappers\\Implement\\ReportMapper.cs",
               "RelativeDocumentMoniker": "Repos\\Mappers\\Implement\\ReportMapper.cs",
-              "ToolTip": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\Repos\\Mappers\\Implement\\ReportMapper.cs",
+              "ToolTip": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\Repos\\Mappers\\Implement\\ReportMapper.cs",
               "RelativeToolTip": "Repos\\Mappers\\Implement\\ReportMapper.cs",
               "ViewState": "AgIAAMcAAAAAAAAAAAAcwDEBAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

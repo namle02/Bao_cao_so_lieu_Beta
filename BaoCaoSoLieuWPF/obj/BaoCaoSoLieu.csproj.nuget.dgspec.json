@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\BaoCaoSoLieu.csproj": {}
+    "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\BaoCaoSoLieu.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\BaoCaoSoLieu.csproj": {
+    "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\BaoCaoSoLieu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\BaoCaoSoLieu.csproj",
+        "projectUniqueName": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\BaoCaoSoLieu.csproj",
         "projectName": "BaoCaoSoLieu",
-        "projectPath": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\BaoCaoSoLieu.csproj",
+        "projectPath": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\BaoCaoSoLieu.csproj",
         "packagesPath": "C:\\Users\\lehoa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\obj\\",
+        "outputPath": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -77,6 +77,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "SharpCompress": {
+              "target": "Package",
+              "version": "[0.44.5, )"
             }
           },
           "imports": [

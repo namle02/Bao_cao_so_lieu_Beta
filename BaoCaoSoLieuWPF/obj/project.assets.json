@@ -706,6 +706,15 @@
           }
         }
       },
+      "SharpCompress/0.44.5": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/SharpCompress.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/SharpCompress.dll": {}
+        }
+      },
       "System.ClientModel/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1861,6 +1870,21 @@
         "packageIcon.png"
       ]
     },
+    "SharpCompress/0.44.5": {
+      "sha512": "//rgXHGp1vVFK+2A75OKXseZM9Fq8NDkhuV9uf1NxUU4JQj6HDG9VRl51nghasteYF4/ub1Oe/o7Fnwpdj4t1g==",
+      "type": "package",
+      "path": "sharpcompress/0.44.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net10.0/SharpCompress.dll",
+        "lib/net48/SharpCompress.dll",
+        "lib/net8.0/SharpCompress.dll",
+        "sharpcompress.0.44.5.nupkg.sha512",
+        "sharpcompress.nuspec"
+      ]
+    },
     "System.ClientModel/1.0.0": {
       "sha512": "I3CVkvxeqFYjIVEP59DnjbeoGNfo/+SZrCLpRz2v/g0gpCHaEMPtWSY0s9k/7jR1rAsLNg2z2u1JRB76tPjnIw==",
       "type": "package",
@@ -1929,7 +1953,8 @@
       "Microsoft.Data.SqlClient >= 6.0.2",
       "Microsoft.Extensions.DependencyInjection >= 9.0.5",
       "Microsoft.Office.Interop.Word >= 15.0.4797.1004",
-      "Newtonsoft.Json >= 13.0.3"
+      "Newtonsoft.Json >= 13.0.3",
+      "SharpCompress >= 0.44.5"
     ]
   },
   "packageFolders": {
@@ -1939,11 +1964,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\BaoCaoSoLieu.csproj",
+      "projectUniqueName": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\BaoCaoSoLieu.csproj",
       "projectName": "BaoCaoSoLieu",
-      "projectPath": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\BaoCaoSoLieu.csproj",
+      "projectPath": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\BaoCaoSoLieu.csproj",
       "packagesPath": "C:\\Users\\lehoa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu\\BaoCaoSoLieuWPF\\obj\\",
+      "outputPath": "C:\\Users\\lehoa\\Documents\\GitHub\\Bao_cao_so_lieu_Beta_1\\BaoCaoSoLieuWPF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2009,6 +2034,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
+          },
+          "SharpCompress": {
+            "target": "Package",
+            "version": "[0.44.5, )"
           }
         },
         "imports": [

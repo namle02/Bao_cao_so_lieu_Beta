@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using BaoCaoSoLieu.ViewModel;
 using BaoCaoSoLieu.ViewModel.ControlViewModel;
 using BaoCaoSoLieu.ViewModel.PageViewModel;
@@ -22,6 +22,7 @@ namespace BaoCaoSoLieu.DI_Register
             services.AddSingleton<Bang2VM>();
             services.AddSingleton<Bang3VM>();
             services.AddSingleton<Bang4VM>();
+            services.AddSingleton<CapNhatVM>();
         }
     }
 }

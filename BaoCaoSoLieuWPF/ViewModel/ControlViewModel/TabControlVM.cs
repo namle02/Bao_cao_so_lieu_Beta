@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
 using Microsoft.Extensions.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
@@ -56,11 +56,16 @@ namespace BaoCaoSoLieu.ViewModel.ControlViewModel
                         return _serviceProvider.GetRequiredService<Bang3VM>();
                     case "Số liệu của từng phòng khám khoa Khám bệnh tuần":
                         return _serviceProvider.GetRequiredService<Bang4VM>();
+                    case "Cập nhật":
+                        return _serviceProvider.GetRequiredService<CapNhatVM>();
                     default:
                         return _serviceProvider.GetRequiredService<Bang1VM>();
                 }
             }
         }
+
+        /// <summary>True khi đang chọn tab "Cập nhật" (ẩn bộ lọc ngày và nút Xuất báo cáo).</summary>
+        public bool IsUpdatePageSelected => SelectedTable == "Cập nhật";
 
         public TabControlVM(IServiceProvider serviceProvider, IExcelExportService excelExportService, INotificationService notificationService)
         {
@@ -72,7 +77,8 @@ namespace BaoCaoSoLieu.ViewModel.ControlViewModel
                 "Kết quả toàn viện",
                 "Kết quả thực hiện kế hoạch của các khoa nội trú tuần",
                 "Thực hiện các dịch vụ phẫu theo yêu cầu của các khoa nội trú tuần",
-                "Số liệu của từng phòng khám khoa Khám bệnh tuần"
+                "Số liệu của từng phòng khám khoa Khám bệnh tuần",
+                "Cập nhật"
             };
             SelectedTable = TableOptions.First();
             TuNgay = DateTime.Now;
@@ -89,7 +95,10 @@ namespace BaoCaoSoLieu.ViewModel.ControlViewModel
             PropertyChanged += (s, e) =>
             {
                 if (e.PropertyName == nameof(SelectedTable))
+                {
                     OnPropertyChanged(nameof(CurrentTableVM));
+                    OnPropertyChanged(nameof(IsUpdatePageSelected));
+                }
                 if (e.PropertyName == nameof(IsLoading))
                 {
                     (TimKiemCommand as AsyncRelayCommand)?.NotifyCanExecuteChanged();

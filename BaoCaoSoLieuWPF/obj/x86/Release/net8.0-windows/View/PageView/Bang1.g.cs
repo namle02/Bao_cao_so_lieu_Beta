@@ -53,7 +53,7 @@ namespace BaoCaoSoLieu.View.PageView {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BaoCaoSoLieu;component/view/pageview/bang1.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BaoCaoSoLieu;V1.0.0;component/view/pageview/bang1.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\View\PageView\Bang1.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

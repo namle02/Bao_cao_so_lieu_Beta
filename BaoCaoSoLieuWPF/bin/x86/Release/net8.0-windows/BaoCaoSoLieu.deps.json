@@ -14,7 +14,8 @@
           "Microsoft.Data.SqlClient": "6.0.2",
           "Microsoft.Extensions.DependencyInjection": "9.0.5",
           "Microsoft.Office.Interop.Word": "15.0.4797.1004",
-          "Newtonsoft.Json": "13.0.3"
+          "Newtonsoft.Json": "13.0.3",
+          "SharpCompress": "0.44.5"
         },
         "runtime": {
           "BaoCaoSoLieu.dll": {}
@@ -500,6 +501,14 @@
           }
         }
       },
+      "SharpCompress/0.44.5": {
+        "runtime": {
+          "lib/net8.0/SharpCompress.dll": {
+            "assemblyVersion": "0.44.5.0",
+            "fileVersion": "0.44.5.0"
+          }
+        }
+      },
       "System.ClientModel/1.0.0": {
         "dependencies": {
           "System.Memory.Data": "1.0.2"
@@ -811,6 +820,13 @@
       "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "SharpCompress/0.44.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-//rgXHGp1vVFK+2A75OKXseZM9Fq8NDkhuV9uf1NxUU4JQj6HDG9VRl51nghasteYF4/ub1Oe/o7Fnwpdj4t1g==",
+      "path": "sharpcompress/0.44.5",
+      "hashPath": "sharpcompress.0.44.5.nupkg.sha512"
     },
     "System.ClientModel/1.0.0": {
       "type": "package",

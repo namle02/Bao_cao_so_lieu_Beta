@@ -1,20 +1,20 @@
 ﻿BaoCaoSoLieu
-
+1.0.0
 
 winexe
 C#
 .cs
-C:\Users\lehoa\Documents\GitHub\Bao_cao_so_lieu\BaoCaoSoLieuWPF\obj\x86\Release\net8.0-windows\
+C:\Users\lehoa\Documents\GitHub\Bao_cao_so_lieu_Beta_1\BaoCaoSoLieuWPF\obj\x86\Release\net8.0-windows\
 BaoCaoSoLieu
 none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\lehoa\Documents\GitHub\Bao_cao_so_lieu\BaoCaoSoLieuWPF\App.xaml
-8-109430724
+C:\Users\lehoa\Documents\GitHub\Bao_cao_so_lieu_Beta_1\BaoCaoSoLieuWPF\App.xaml
+9-457407812
 1-1808235849
-46506297736
-235-1967592804
-View\ControlView\Footer.xaml;View\ControlView\Header.xaml;View\ControlView\TabControl.xaml;View\MainWindow.xaml;View\PageView\Bang1.xaml;View\PageView\Bang2.xaml;View\PageView\Bang3.xaml;View\PageView\Bang4.xaml;
+52792557358
+2361599748828
+View\ControlView\Footer.xaml;View\ControlView\Header.xaml;View\ControlView\TabControl.xaml;View\MainWindow.xaml;View\PageView\Bang1.xaml;View\PageView\Bang2.xaml;View\PageView\Bang3.xaml;View\PageView\Bang4.xaml;View\PageView\CapNhatPage.xaml;
 
 False
 

@@ -53,7 +53,7 @@ namespace BaoCaoSoLieu.View.ControlView {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BaoCaoSoLieu;component/view/controlview/footer.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BaoCaoSoLieu;V1.0.0;component/view/controlview/footer.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\View\ControlView\Footer.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
